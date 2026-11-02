@@ -1,0 +1,1601 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101010">
+
+<title>Aluri Amruth Raj | SAP HANA Database Administrator</title>
+
+<meta name="description" content="Portfolio of Aluri Amruth Raj, SAP HANA Database Administrator at HCLTech. Expertise in SAP HANA upgrades, backup and recovery, replication, partitioning and database operations.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root {
+    --orange: #eb4917;
+    --black: #101010;
+    --dark: #171717;
+    --white: #ffffff;
+    --gray: #777;
+    --light: #f6f6f6;
+    --border: #eaeaea;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--black);
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 88%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* NAVBAR */
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--orange);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 12px;
+    font-weight: 500;
+    color: #555;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--orange);
+}
+
+.nav-contact {
+    background: var(--black);
+    color: white !important;
+    padding: 12px 20px;
+    border-radius: 5px;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 720px;
+    padding: 160px 0 100px;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(circle at 85% 35%, rgba(235,73,23,.10), transparent 28%),
+        var(--white);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 15px;
+    background: #fff0eb;
+    color: var(--orange);
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.tag i {
+    font-size: 9px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    color: var(--orange);
+}
+
+.hero-subtitle {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #444;
+}
+
+.hero-description {
+    margin-top: 18px;
+    color: #777;
+    font-size: 13px;
+    line-height: 2;
+    max-width: 590px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 23px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: .3s;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background: var(--orange);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #cf390e;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border-color: #ddd;
+    color: var(--black);
+}
+
+.btn-outline:hover {
+    border-color: var(--orange);
+    color: var(--orange);
+}
+
+.hero-card {
+    background: var(--black);
+    color: white;
+    padding: 35px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,.15);
+}
+
+.hero-card::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: var(--orange);
+    filter: blur(110px);
+    right: -70px;
+    top: -70px;
+    opacity: .55;
+}
+
+.card-icon {
+    font-size: 35px;
+    color: var(--orange);
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-card h3 {
+    font-size: 23px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-card p {
+    font-size: 12px;
+    color: #aaa;
+    line-height: 2;
+    position: relative;
+    z-index: 1;
+}
+
+.card-line {
+    height: 1px;
+    background: #333;
+    margin: 25px 0;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-size: 11px;
+    gap: 15px;
+}
+
+.card-info span:first-child {
+    color: #888;
+}
+
+.card-info span:last-child {
+    color: white;
+    font-weight: 600;
+}
+
+/* SECTION COMMON */
+
+section {
+    padding: 100px 0;
+}
+
+.section-heading {
+    margin-bottom: 50px;
+}
+
+.section-label {
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: clamp(30px, 4vw, 42px);
+    letter-spacing: -1.5px;
+    margin-top: 12px;
+    font-weight: 700;
+}
+
+.section-heading p {
+    font-size: 13px;
+    color: var(--gray);
+    margin-top: 12px;
+    line-height: 1.9;
+}
+
+/* ABOUT */
+
+.about {
+    background: var(--light);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.about-text p {
+    color: #666;
+    font-size: 13px;
+    line-height: 2.1;
+    margin-bottom: 15px;
+}
+
+.about-text strong {
+    color: var(--black);
+}
+
+.about-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.detail-box {
+    background: white;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.detail-box:hover {
+    border-color: var(--orange);
+    transform: translateY(-4px);
+}
+
+.detail-box i {
+    color: var(--orange);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.detail-box h4 {
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.detail-box p {
+    font-size: 10px;
+    color: #888;
+}
+
+/* EXPERIENCE */
+
+.experience {
+    background: white;
+}
+
+.experience-card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 35px;
+    position: relative;
+    transition: .3s;
+}
+
+.experience-card:hover {
+    border-color: var(--orange);
+    box-shadow: 0 15px 40px rgba(0,0,0,.05);
+}
+
+.experience-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.company-name {
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.company-name span {
+    color: var(--orange);
+}
+
+.job-title {
+    font-size: 13px;
+    color: #777;
+    margin-top: 7px;
+}
+
+.job-date {
+    background: #fff0eb;
+    color: var(--orange);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 600;
+    height: fit-content;
+}
+
+.experience-card h4 {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.experience-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px 35px;
+}
+
+.experience-list li {
+    list-style: none;
+    font-size: 11px;
+    line-height: 1.9;
+    color: #666;
+    position: relative;
+    padding-left: 20px;
+}
+
+.experience-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--orange);
+    font-weight: 700;
+}
+
+/* TECHNICAL EXPERTISE */
+
+.expertise {
+    background: var(--black);
+    color: white;
+}
+
+.expertise .section-heading p {
+    color: #999;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.expertise-card {
+    padding: 28px;
+    background: #1a1a1a;
+    border: 1px solid #2c2c2c;
+    border-radius: 9px;
+    transition: .3s;
+}
+
+.expertise-card:hover {
+    border-color: var(--orange);
+    transform: translateY(-5px);
+}
+
+.expertise-card i {
+    font-size: 25px;
+    color: var(--orange);
+    margin-bottom: 20px;
+}
+
+.expertise-card h3 {
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.expertise-card p {
+    font-size: 11px;
+    line-height: 2;
+    color: #999;
+}
+
+/* TOOLS */
+
+.tools {
+    background: var(--light);
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.tool-box {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 23px 15px;
+    text-align: center;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.tool-box:hover {
+    border-color: var(--orange);
+    transform: translateY(-4px);
+}
+
+.tool-box i {
+    font-size: 23px;
+    color: var(--orange);
+    margin-bottom: 12px;
+}
+
+.tool-box h4 {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* EDUCATION */
+
+.education-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.education-card {
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.education-card:hover {
+    border-color: var(--orange);
+}
+
+.education-card .year {
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.education-card h3 {
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.education-card p {
+    font-size: 11px;
+    color: #888;
+    margin-top: 8px;
+    line-height: 1.8;
+}
+
+.education-card .score {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 12px;
+    background: #fff0eb;
+    color: var(--orange);
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* CERTIFICATIONS */
+
+.certification {
+    background: var(--light);
+}
+
+.cert-card {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.cert-icon {
+    width: 65px;
+    height: 65px;
+    min-width: 65px;
+    background: #fff0eb;
+    color: var(--orange);
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 27px;
+}
+
+.cert-card h3 {
+    font-size: 14px;
+}
+
+.cert-card p {
+    color: #888;
+    font-size: 11px;
+    margin-top: 7px;
+}
+
+/* ADDITIONAL SKILLS */
+
+.additional-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.skill-tag {
+    border: 1px solid var(--border);
+    padding: 11px 18px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.skill-tag:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: white;
+}
+
+/* CONTACT */
+
+.contact {
+    background: var(--black);
+    color: white;
+    text-align: center;
+}
+
+.contact .section-heading p {
+    color: #999;
+}
+
+.contact-content {
+    max-width: 650px;
+    margin: auto;
+}
+
+.contact-content h2 {
+    font-size: clamp(30px, 5vw, 48px);
+    letter-spacing: -2px;
+}
+
+.contact-content h2 span {
+    color: var(--orange);
+}
+
+.contact-content p {
+    color: #999;
+    font-size: 12px;
+    line-height: 2;
+    margin: 20px 0 30px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.contact-links a {
+    padding: 13px 18px;
+    border: 1px solid #383838;
+    border-radius: 5px;
+    font-size: 11px;
+    transition: .3s;
+}
+
+.contact-links a:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+}
+
+/* FOOTER */
+
+footer {
+    background: #080808;
+    color: #777;
+    padding: 25px 0;
+    font-size: 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.footer-content span {
+    color: var(--orange);
+}
+
+/* SCROLL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: .7s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+        max-width: 500px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .expertise-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 700px) {
+    .container {
+        width: 90%;
+    }
+
+    .navbar {
+        height: 68px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 6%;
+        gap: 23px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hero {
+        padding: 125px 0 70px;
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+        letter-spacing: -2px;
+    }
+
+    section {
+        padding: 70px 0;
+    }
+
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-list {
+        grid-template-columns: 1fr;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-card {
+        padding: 23px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+<div class="container navbar">
+
+    <a href="#home" class="logo">
+        AMRUTH<span>.</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact" class="nav-contact">Contact Me</a></li>
+    </ul>
+
+    <div class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+</div>
+</header>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+<div class="container hero-grid">
+
+    <div class="reveal">
+
+        <div class="tag">
+            <i class="fa-solid fa-circle"></i>
+            SAP HANA DATABASE PROFESSIONAL
+        </div>
+
+        <h1>
+            ALURI<br>
+            AMRUTH <span>RAJ.</span>
+        </h1>
+
+        <div class="hero-subtitle">
+            SAP HANA Database Administrator
+        </div>
+
+        <p class="hero-description">
+            Software Engineer at HCLTech, specializing in SAP HANA
+            database administration, backup and recovery, database
+            upgrades, high availability, partitioning and enterprise
+            database operations.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#experience" class="btn btn-primary">
+                Explore My Work <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+                Let's Connect <i class="fa-regular fa-envelope"></i>
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="hero-card reveal">
+
+        <div class="card-icon">
+            <i class="fa-solid fa-database"></i>
+        </div>
+
+        <h3>Database Operations.</h3>
+
+        <p>
+            Managing, maintaining and supporting enterprise
+            SAP HANA database environments with a focus on
+            availability, reliability and performance.
+        </p>
+
+        <div class="card-line"></div>
+
+        <div class="card-info">
+            <span>Current Organization</span>
+            <span>HCLTech</span>
+        </div>
+
+        <div class="card-info">
+            <span>Designation</span>
+            <span>Software Engineer</span>
+        </div>
+
+        <div class="card-info">
+            <span>Domain</span>
+            <span>SAP HANA DBA</span>
+        </div>
+
+        <div class="card-info">
+            <span>Location</span>
+            <span>India</span>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- ABOUT SECTION -->
+
+<section class="about" id="about">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <div class="section-label">ABOUT ME</div>
+        <h2>Who I Am</h2>
+        <p>A little introduction about my professional journey.</p>
+    </div>
+
+    <div class="about-grid">
+
+        <div class="about-text reveal">
+
+            <p>
+                I'm <strong>Aluri Amruth Raj</strong>, a Software
+                Engineer at <strong>HCLTech</strong>, working with
+                the SAP HANA Database team.
+            </p>
+
+            <p>
+                I have hands-on experience in enterprise database
+                administration and operational support, including
+                database upgrades, online and offline backups,
+                backup retention, full database recovery and
+                Point-in-Time Recovery.
+            </p>
+
+            <p>
+                My experience also includes SAP HANA System
+                Replication, SSL certificate configuration,
+                HASH and RANGE table partitioning, database
+                parameter changes, storage resizing and
+                performance monitoring.
+            </p>
+
+            <p>
+                I am continuously learning and improving my
+                expertise in SAP HANA architecture, database
+                reliability, high availability and cloud
+                infrastructure.
+            </p>
+
+        </div>
+
+        <div class="about-details reveal">
+
+            <div class="detail-box">
+                <i class="fa-solid fa-briefcase"></i>
+                <h4>Current Role</h4>
+                <p>Software Engineer</p>
+            </div>
+
+            <div class="detail-box">
+                <i class="fa-solid fa-building"></i>
+                <h4>Organization</h4>
+                <p>HCLTech</p>
+            </div>
+
+            <div class="detail-box">
+                <i class="fa-solid fa-database"></i>
+                <h4>Specialization</h4>
+                <p>SAP HANA DBA</p>
+            </div>
+
+            <div class="detail-box">
+                <i class="fa-solid fa-location-dot"></i>
+                <h4>Location</h4>
+                <p>Andhra Pradesh, India</p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section class="experience" id="experience">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <div class="section-label">CAREER JOURNEY</div>
+        <h2>Professional Experience</h2>
+        <p>My experience in enterprise SAP HANA database operations.</p>
+    </div>
+
+    <div class="experience-card reveal">
+
+        <div class="experience-top">
+
+            <div>
+                <div class="company-name">
+                    HCL<span>Tech</span>
+                </div>
+
+                <div class="job-title">
+                    Software Engineer — SAP HANA Database Team
+                </div>
+            </div>
+
+            <div class="job-date">
+                AUGUST 2025 — PRESENT
+            </div>
+
+        </div>
+
+        <h4>SAP HANA Database Administration & Operations</h4>
+
+        <ul class="experience-list">
+
+            <li>
+                Performed SAP HANA database upgrade activities,
+                including preparation, execution and post-upgrade validation.
+            </li>
+
+            <li>
+                Executed online and offline database backups,
+                backup retention management and SFTP transfers.
+            </li>
+
+            <li>
+                Performed full database recovery and
+                Point-in-Time Recovery (PITR).
+            </li>
+
+            <li>
+                Enabled and disabled SAP HANA System Replication
+                for database administration activities.
+            </li>
+
+            <li>
+                Generated, imported and configured SSL certificates
+                for secure database communication.
+            </li>
+
+            <li>
+                Performed online, offline and manual table
+                partitioning using HASH and RANGE strategies.
+            </li>
+
+            <li>
+                Analyzed EarlyWatch Alert (EWA) reports and
+                reviewed database health indicators.
+            </li>
+
+            <li>
+                Supported Pacemaker cluster and LBHA environment
+                operations with respective support teams.
+            </li>
+
+            <li>
+                Implemented SAP HANA database parameter changes
+                based on operational requirements.
+            </li>
+
+            <li>
+                Supported database storage resizing and
+                capacity management activities.
+            </li>
+
+            <li>
+                Worked with database environments across AWS,
+                Microsoft Azure and Google Cloud Platform.
+            </li>
+
+            <li>
+                Participated in database maintenance,
+                troubleshooting and production support.
+            </li>
+
+            <li>
+                Supported SAP HANA plugin installations,
+                Delivery Unit deployments and UMML activities.
+            </li>
+
+            <li>
+                Performed SYSTEM and tenant database user
+                password reset and credential management.
+            </li>
+
+            <li>
+                Created and managed CURA users based on
+                database access requirements.
+            </li>
+
+            <li>
+                Managed database roles, privileges and
+                authorization assignments.
+            </li>
+
+            <li>
+                Monitored SAP HANA CPU and memory consumption
+                for resource utilization analysis.
+            </li>
+
+        </ul>
+
+    </div>
+</div>
+</section>
+
+
+<!-- TECHNICAL EXPERTISE -->
+
+<section class="expertise" id="expertise">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <div class="section-label">WHAT I DO</div>
+        <h2>Technical Expertise</h2>
+        <p>
+            Core technologies and operational areas
+            in SAP HANA Database Administration.
+        </p>
+    </div>
+
+    <div class="expertise-grid">
+
+        <div class="expertise-card reveal">
+            <i class="fa-solid fa-database"></i>
+            <h3>Database Administration</h3>
+            <p>
+                SAP HANA administration, database maintenance,
+                upgrades, troubleshooting and operational support.
+            </p>
+        </div>
+
+        <div class="expertise-card reveal">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <h3>Backup & Recovery</h3>
+            <p>
+                Online backup, offline backup, full database
+                recovery, PITR, retention and SFTP transfers.
+            </p>
+        </div>
+
+        <div class="expertise-card reveal">
+            <i class="fa-solid fa-table-columns"></i>
+            <h3>Table Partitioning</h3>
+            <p>
+                Online partitioning, offline partitioning,
+                manual partitioning, HASH and RANGE strategies.
+            </p>
+        </div>
+
+        <div class="expertise-card reveal">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Database Security</h3>
+            <p>
+                SSL certificate generation, certificate
+                import, configuration and user administration.
+            </p>
+        </div>
+
+        <div class="expertise-card reveal">
+            <i class="fa-solid fa-server"></i>
+            <h3>High Availability</h3>
+            <p>
+                SAP HANA System Replication, Pacemaker
+                and LBHA environment support.
+            </p>
+        </div>
+
+        <div class="expertise-card reveal">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Performance & Monitoring</h3>
+            <p>
+                EWA reports, CPU and memory monitoring,
+                database parameters and resource utilization.
+            </p>
+        </div>
+
+        <div class="expertise-card reveal">
+            <i class="fa-solid fa-sliders"></i>
+            <h3>Database Management</h3>
+            <p>
+                Parameter changes, storage resizing,
+                capacity management and database maintenance.
+            </p>
+        </div>
+
+        <div class="expertise-card reveal">
+            <i class="fa-solid fa-users-gear"></i>
+            <h3>Users & Authorization</h3>
+            <p>
+                User management, password resets,
+                role assignments and privilege management.
+            </p>
+        </div>
+
+        <div class="expertise-card reveal">
+            <i class="fa-solid fa-cloud"></i>
+            <h3>Cloud Platforms</h3>
+            <p>
+                Exposure to Amazon Web Services,
+                Microsoft Azure and Google Cloud Platform.
+            </p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+
+<!-- DATABASE TOOLS -->
+
+<section class="tools" id="tools">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <div class="section-label">MY WORKSPACE</div>
+        <h2>Tools & Platforms</h2>
+        <p>Tools used in database administration and enterprise operations.</p>
+    </div>
+
+    <div class="tools-grid">
+
+        <div class="tool-box reveal">
+            <i class="fa-solid fa-database"></i>
+            <h4>SAP HANA Studio</h4>
+        </div>
+
+        <div class="tool-box reveal">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <h4>SAP SPC Tool</h4>
+        </div>
+
+        <div class="tool-box reveal">
+            <i class="fa-solid fa-network-wired"></i>
+            <h4>TIC</h4>
+        </div>
+
+        <div class="tool-box reveal">
+            <i class="fa-solid fa-gears"></i>
+            <h4>CAM</h4>
+        </div>
+
+        <div class="tool-box reveal">
+            <i class="fa-solid fa-ticket"></i>
+            <h4>ServiceNow</h4>
+        </div>
+
+        <div class="tool-box reveal">
+            <i class="fa-solid fa-folder-open"></i>
+            <h4>WinSCP</h4>
+        </div>
+
+        <div class="tool-box reveal">
+            <i class="fa-brands fa-aws"></i>
+            <h4>AWS</h4>
+        </div>
+
+        <div class="tool-box reveal">
+            <i class="fa-solid fa-cloud"></i>
+            <h4>Microsoft Azure</h4>
+        </div>
+
+        <div class="tool-box reveal">
+            <i class="fa-brands fa-google"></i>
+            <h4>Google Cloud</h4>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- TECHNICAL SKILLS -->
+
+<section id="skills">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <div class="section-label">TECHNICAL BACKGROUND</div>
+        <h2>Additional Skills</h2>
+        <p>My development and database technology background.</p>
+    </div>
+
+    <h4 style="font-size:13px;margin-bottom:15px;">
+        Database Technologies
+    </h4>
+
+    <div class="additional-skills reveal">
+        <span class="skill-tag">SAP HANA</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">SQL</span>
+    </div>
+
+    <h4 style="font-size:13px;margin:30px 0 15px;">
+        Programming Languages
+    </h4>
+
+    <div class="additional-skills reveal">
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">C</span>
+    </div>
+
+    <h4 style="font-size:13px;margin:30px 0 15px;">
+        Web Technologies
+    </h4>
+
+    <div class="additional-skills reveal">
+        <span class="skill-tag">React.js</span>
+        <span class="skill-tag">Next.js</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Express.js</span>
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+    </div>
+
+    <h4 style="font-size:13px;margin:30px 0 15px;">
+        Developer Tools
+    </h4>
+
+    <div class="additional-skills reveal">
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">VS Code</span>
+        <span class="skill-tag">Postman</span>
+        <span class="skill-tag">Jira</span>
+    </div>
+
+</div>
+</section>
+
+
+<!-- EDUCATION -->
+
+<section class="tools" id="education">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <div class="section-label">ACADEMIC JOURNEY</div>
+        <h2>Education</h2>
+        <p>My educational qualifications.</p>
+    </div>
+
+    <div class="education-grid">
+
+        <div class="education-card reveal">
+
+            <div class="year">2022 — 2025</div>
+
+            <h3>Bachelor of Technology</h3>
+
+            <p>
+                Information Technology<br>
+                Bapatla Engineering College<br>
+                Bapatla, Andhra Pradesh
+            </p>
+
+            <div class="score">CGPA: 8.6 / 10</div>
+
+        </div>
+
+        <div class="education-card reveal">
+
+            <div class="year">2019 — 2022</div>
+
+            <h3>Diploma</h3>
+
+            <p>
+                Electrical and Electronics Engineering<br>
+                Bapatla Engineering College<br>
+                Bapatla, Andhra Pradesh
+            </p>
+
+            <div class="score">Percentage: 87%</div>
+
+        </div>
+
+    </div>
+</div>
+</section>
+
+
+<!-- CERTIFICATIONS -->
+
+<section class="certification" id="certifications">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <div class="section-label">LEARNING & DEVELOPMENT</div>
+        <h2>Certifications</h2>
+        <p>Professional learning and technical development.</p>
+    </div>
+
+    <div class="cert-card reveal">
+
+        <div class="cert-icon">
+            <i class="fa-solid fa-certificate"></i>
+        </div>
+
+        <div>
+            <h3>SAP HANA Administration</h3>
+            <p>Udemy — Online Certification</p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- LANGUAGES -->
+
+<section id="languages">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <div class="section-label">COMMUNICATION</div>
+        <h2>Languages</h2>
+    </div>
+
+    <div class="additional-skills reveal">
+        <span class="skill-tag">English</span>
+        <span class="skill-tag">Hindi</span>
+        <span class="skill-tag">Telugu</span>
+    </div>
+
+</div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+<div class="container">
+
+    <div class="contact-content reveal">
+
+        <div class="section-label">GET IN TOUCH</div>
+
+        <h2>
+            Let's Connect &<br>
+            <span>Work Together.</span>
+        </h2>
+
+        <p>
+            Interested in SAP HANA Database Administration,
+            enterprise database operations and technology.
+            Feel free to connect with me.
+        </p>
+
+        <div class="contact-links">
+
+            <a href="mailto:amruthexe@gmail.com">
+                <i class="fa-regular fa-envelope"></i>
+                Email Me
+            </a>
+
+            <a href="https://linkedin.com/in/aluri-amruth-raj/"
+               target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin-in"></i>
+                LinkedIn
+            </a>
+
+            <a href="https://github.com/amruthexe"
+               target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+                GitHub
+            </a>
+
+            <a href="https://amruth.xyz"
+               target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-globe"></i>
+                Portfolio
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+<div class="container footer-content">
+
+    <div>
+        © 2026 <span>Aluri Amruth Raj.</span> All rights reserved.
+    </div>
+
+    <div>
+        Designed with <span>♥</span> using Poppins.
+    </div>
+
+</div>
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("show");
+
+    menuBtn.setAttribute("aria-expanded", isOpen);
+    menuBtn.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    });
+});
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+        }
+
+    });
+
+}, {
+    threshold: 0.12
+});
+
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
+
+</script>
+
+</body>
+</html>
